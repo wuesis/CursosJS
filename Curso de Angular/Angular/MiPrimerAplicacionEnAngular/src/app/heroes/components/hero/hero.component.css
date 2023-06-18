@@ -1,0 +1,11 @@
+
+img{
+  width: 100%;
+}
+
+.card{
+display: grid;
+grid-template: 3fr 50px 50px 50px/300px;
+text-align: center;
+
+}
