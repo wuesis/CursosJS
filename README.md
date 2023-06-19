@@ -1,2 +1,2 @@
 # CursosJS
-Avances de mis cursos de JS
+Avances del curso tomados.
