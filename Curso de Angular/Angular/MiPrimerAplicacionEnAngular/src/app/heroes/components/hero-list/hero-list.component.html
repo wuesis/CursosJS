@@ -1,5 +1,50 @@
-<div class="CardList">
 
+<div class="topbar-item">
+  <div class="heroes-menu">
+      <div class="heroes-menu-tittle">
+        <h2>Superheroes menu.</h2>
+      </div>
+      <div class="heroes-menu-form">
+        <div>
+          <label>Name</label>
+          <br>
+          <input #superheroName>
+        </div>
+        <div>
+          <label>Indentity</label>
+          <br>
+          <input #superheroIdentity>
+        </div>
+        <div>
+          <label>Age</label>
+          <br>
+          <input #superheroAge>
+        </div>
+        <div>
+          <label>PhotooURL</label>
+          <br>
+          <input #superheroPhotoURL>
+        </div>
+        <div>
+          <button>Limpiar</button>
+        </div>
+        <div>
+          <button (click)="addCharacter(superheroName.value, superheroIdentity.value, superheroAge.value, superheroPhotoURL.value)">Agregar</button>
+        </div>
+      </div>
+  </div>
 
+  <div class="cardList">
+    <div *ngFor="let item of currentHeroList" class="card">
+      <img [src]="item.photo" (click)="clicprueba(item)">
+      <p>{{item.heroName}}</p>
+      <p>{{item.age}}</p>
+      <p>{{item.Identity}}</p>
+    </div>
+  </div>
 
 </div>
+
+
+
+

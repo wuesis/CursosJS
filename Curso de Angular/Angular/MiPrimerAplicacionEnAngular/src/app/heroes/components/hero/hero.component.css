@@ -7,5 +7,11 @@ img{
 display: grid;
 grid-template: 3fr 50px 50px 50px/300px;
 text-align: center;
-
+border-style: dotted;
 }
+
+.cardList{
+  display: flex;
+  gap: 10px 20px;
+}
+

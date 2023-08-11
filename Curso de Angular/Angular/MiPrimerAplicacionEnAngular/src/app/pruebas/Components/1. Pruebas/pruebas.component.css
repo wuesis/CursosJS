@@ -1,0 +1,17 @@
+
+
+
+.background{
+  background-color: rgba(30, 43, 57, 0.887);
+  display: grid;
+  gap: ;
+  grid-template: 15% 60% 10% 15%/ 1fr;
+  justify-items: center;
+  align-items: center;
+}
+
+
+.background img{
+  max-height: 500px;
+  max-width: 500px;
+}

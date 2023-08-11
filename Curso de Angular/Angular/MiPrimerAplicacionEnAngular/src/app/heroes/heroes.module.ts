@@ -1,18 +1,23 @@
 import { NgModule } from '@angular/core';
 import { HeroComponent } from './components/hero/hero.component';
 import { HeroListComponent } from './components/hero-list/hero-list.component';
+import { BrowserModule } from '@angular/platform-browser';
+import { AddHeroComponent } from './components/add-hero/add-hero.component';
+import { MainpageComponent } from './Pages/mainpage/mainpage.component';
 
 
 
 @NgModule({
-  imports: [],
+  imports: [BrowserModule],
   exports: [
     HeroListComponent,
     HeroComponent
   ],
   declarations: [
     HeroComponent,
-    HeroListComponent
+    HeroListComponent,
+    AddHeroComponent,
+    MainpageComponent
   ],
   providers: [],
 })

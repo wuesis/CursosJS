@@ -1,0 +1,8 @@
+
+
+  <p>{{nombre}}</p>
+  <input placeholder="Escibre aqui" #unicoinput (blur)="funcioncita(unicoinput.value)">
+
+  <button type="button" (click)="notify.emit(1)">1</button>
+  <button type="button" (click)="notify.emit(10)">10</button>
+

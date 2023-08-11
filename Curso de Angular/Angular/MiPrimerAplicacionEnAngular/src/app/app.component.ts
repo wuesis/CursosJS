@@ -9,7 +9,10 @@ import { Component } from '@angular/core';
 
 export class AppComponent {
 
-  public title: string = 'Introduccion a angular';
+  public title: string = 'Super heroes:';
+  public childCount: number = 0;
 
-
+  public onNotify(number: number) {
+    this.childCount+=number;
+  }
 }
