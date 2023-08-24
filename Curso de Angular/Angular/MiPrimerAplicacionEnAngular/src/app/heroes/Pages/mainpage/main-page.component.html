@@ -1,0 +1,4 @@
+<div class="topbar-item">
+  <hero-add-hero  (notify)="addHeroe($event)"></hero-add-hero>
+  <hero-list (idHeroDeleted)="onDeleteHEro($event)" [heroeList]="heros" style="overflow: scroll;"></hero-list>
+</div>

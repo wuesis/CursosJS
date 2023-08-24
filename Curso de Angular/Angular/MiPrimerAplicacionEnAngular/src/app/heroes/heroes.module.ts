@@ -3,15 +3,16 @@ import { HeroComponent } from './components/hero/hero.component';
 import { HeroListComponent } from './components/hero-list/hero-list.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { AddHeroComponent } from './components/add-hero/add-hero.component';
-import { MainpageComponent } from './Pages/mainpage/mainpage.component';
+import { MainpageComponent } from './Pages/mainpage/main-page.component';
+import { FormsModule } from '@angular/forms';
 
 
 
 @NgModule({
-  imports: [BrowserModule],
+  imports: [BrowserModule,
+           FormsModule],
   exports: [
-    HeroListComponent,
-    HeroComponent
+    MainpageComponent
   ],
   declarations: [
     HeroComponent,

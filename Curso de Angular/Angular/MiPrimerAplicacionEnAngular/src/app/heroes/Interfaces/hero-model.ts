@@ -1,6 +1,7 @@
-export interface heroe {
+export interface hero {
+  UUID: string,
   heroName: string,
   age: number,
-  Identity: string,
+  identity: string,
   photo: string
 }

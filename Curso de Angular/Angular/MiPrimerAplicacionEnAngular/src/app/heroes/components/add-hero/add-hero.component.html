@@ -1,1 +1,43 @@
-<p>add-hero works!</p>
+<div class="heroes-menu">
+  <div class="heroes-menu-tittle">
+    <h2>Superheroes menu.</h2>
+  </div>
+
+    <form class="heroes-menu-form" (ngSubmit)="emitHeroe()">
+    <div>
+      <label>Name</label>
+      <br>
+      <input type="text"
+             [(ngModel)]="heroe.heroName"
+             name="heroName"
+             placeholder="heroName">
+    </div>
+    <div>
+      <label>Indentity</label>
+      <br>
+      <input  [(ngModel)]="heroe.identity"
+              name="superheroIdentity"
+              placeholder="superhero identity">
+    </div>
+    <div>
+      <label>Age</label>
+      <br>
+      <input [(ngModel)]="heroe.age"
+             name="superheroAge"
+             placeholder="superhero age">
+    </div>
+    <div>
+      <label>PhotooURL</label>
+      <br>
+      <input [(ngModel)]="heroe.photo"
+             name="superheroPhotoURL"
+             placeholder="super hero photo URL">
+    </div>
+    <div>
+      <button (click)="clearForm()">Limpiar</button>
+    </div>
+    <div>
+      <button type="submit" (click)="emitHeroe()">Agregar</button>
+    </div>
+    </form>
+</div>

@@ -1,0 +1,18 @@
+.heroes-menu-form {
+  display: grid;
+  grid-template: repeat(3, 1fr)/ repeat(2, 1fr);
+  gap: 5px;
+  justify-items: center;
+  align-items: center;
+}
+
+.heroes-menu-form input {
+  width: 150px;
+}
+
+.heroes-menu-tittle {
+  display: flex;
+  flex-flow: column;
+  border-bottom-style: solid;
+  border-width: 2px
+}
