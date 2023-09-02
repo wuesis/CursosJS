@@ -1,0 +1,12 @@
+
+.container{
+  display: grid;
+  grid-template: 100px auto/1fr;
+  max-height: 100vh;
+}
+
+
+.searchBar{
+  align-self: center;
+  margin: 10px;
+}
