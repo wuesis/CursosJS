@@ -3,6 +3,7 @@
   display: grid;
   grid-template: 100px auto/1fr;
   max-height: 100vh;
+  background-color: #e0e1d95c;
 }
 
 

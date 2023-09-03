@@ -11,11 +11,15 @@ export class VisualizerService {
     this.tagHistory = [];
   }
 
-  getTaghistory(): string[]{
+  public getTaghistory(): string[] {
     return [...this.tagHistory];
   }
 
-  addTagToTagHistory(): void {
+  public searchTag(tag: string): void {
+
+    if(tag.length==0)
+      return;
+    this.tagHistory.push(tag);
 
   }
 }

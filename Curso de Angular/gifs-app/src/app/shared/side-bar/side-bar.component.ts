@@ -1,4 +1,7 @@
+import { tick } from '@angular/core/testing';
+import { VisualizerService } from './../../visualizer/services/visualizer.service';
 import { Component } from '@angular/core';
+
 
 @Component({
   selector: 'side-bar',
@@ -7,12 +10,13 @@ import { Component } from '@angular/core';
 })
 export class SideBarComponent {
 
+  constructor(private visualizerService: VisualizerService) {
 
-  public history: string[];
-
-  constructor(){
-    this.history=[];
   }
 
+  get tags(): string[] {
+
+    return this.visualizerService.getTaghistory()
+  }
 
 }

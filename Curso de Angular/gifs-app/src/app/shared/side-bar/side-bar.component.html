@@ -1,4 +1,22 @@
 <div class="side-bar">
+  <ng-container *ngIf="tags.length==0; then noneTagTemplate; else tagsTemplate">
 
+  </ng-container>
+
+
+  <!-- *ngFor="let item of list" -->
 
 </div>
+
+
+
+<ng-template #tagsTemplate>
+  <p class="side-bar-tittle">Tags history</p>
+  <button class="side-bar-button" *ngFor="let tag of tags">
+    {{ tag | titlecase}}
+  </button>
+</ng-template>
+
+<ng-template #noneTagTemplate>
+  <p class="side-bar-tittle">There aren't tag history:</p>
+</ng-template>

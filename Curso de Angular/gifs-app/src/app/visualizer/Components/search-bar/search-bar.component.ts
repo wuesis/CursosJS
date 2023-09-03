@@ -1,12 +1,22 @@
-import { Component, ElementRef, EventEmitter, ViewChild } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
+import { VisualizerService } from '../../services/visualizer.service';
 
 @Component({
   selector: 'visualizer-search-bar',
-  template: `<input (click)="onSearchTag()" (blur)="postSearchTag()" #tagHistory style="height: 40px; font-size:20px; transition: width 0.9s ease; " placeholder="Gif search...">`,
+  styleUrls: ['./search-bar.component.css'],
+  template: `<input
+                #tagHistory  class="search-bar"
+                placeholder="Gif search..."
+                (focus)="onSearchTag()"
+                (blur)="postSearchTag()"
+                (keyup.enter)="searchTag()"
+              >
+            `
 })
+
 export class SearchBarComponent {
 
-  constructor(){
+  constructor(private visualizerService: VisualizerService) {
 
   }
 
@@ -14,12 +24,16 @@ export class SearchBarComponent {
   public tagInput!: ElementRef<HTMLInputElement>;
 
   public onSearchTag(): void {
-    console.log("clic");
-    this.tagInput.nativeElement.style.width="40vw"
+    this.tagInput.nativeElement.style.width = "40vw"
+  }
+
+  public searchTag(): void {
+    var tag = this.tagInput.nativeElement.value;
+    this.tagInput.nativeElement.value = ""
+    this.visualizerService.searchTag(tag);
   }
 
   public postSearchTag(): void {
-    console.log("blur");
-    this.tagInput.nativeElement.style.width="100px"
+    this.tagInput.nativeElement.style.width = "100px"
   }
 }

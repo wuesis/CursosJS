@@ -1,4 +1,39 @@
-.side-bar{
-background: black;
-height: 100vh;
+.side-bar {
+  display: grid;
+  /* grid-template: repeat(10,100px)/100px; */
+  align-items: center;
+  justify-items: center;
+  background: rgb(25, 28, 32);
+  grid-template: repeat(10, 40px)/1fr;
+  height: 100vh;
+  gap: 10px;
+}
+
+
+.side-bar-tittle {
+  font-size: x-large;
+  justify-self: left;
+  gap: 10px;
+  margin-left: 10px;
+  color: whitesmoke;
+  font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.side-bar-button{
+  height: 40px;
+  font-size: 20px;
+  width: 250px;
+  border-radius: 7px;
+}
+
+.side-bar-button:hover{
+  border-radius: 15px;
+  cursor: pointer;
+  opacity: .65;
+  transition: border-radius linear 0.2s, opacity linear 0.4s;
+}
+
+.side-bar-button:not(:hover){
+  border-radius: 7px;
+  transition: border-radius linear 0.2s;
 }
