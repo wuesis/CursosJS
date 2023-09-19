@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { VisualizerService } from 'src/app/visualizer/services/visualizer.service';
+import { Gif } from '../../../interfaces/giphy.interfaces';
 
 @Component({
   selector: 'visualizer-main-page',
@@ -7,8 +9,13 @@ import { Component } from '@angular/core';
 })
 export class MainPageComponent {
 
-  constructor(){
+  constructor(private visualizerService: VisualizerService){
 
   }
+
+  public get gifs() : Gif[] {
+    return this.visualizerService.gifList;
+  }
+
 
 }

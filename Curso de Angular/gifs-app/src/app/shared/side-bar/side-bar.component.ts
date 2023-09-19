@@ -14,6 +14,11 @@ export class SideBarComponent {
 
   }
 
+
+  searchByTagButton(tag: string) {
+    this.visualizerService.searchTag(tag);
+  }
+
   get tags(): string[] {
 
     return this.visualizerService.getTaghistory()

@@ -4,15 +4,11 @@
   </ng-container>
 
 
-  <!-- *ngFor="let item of list" -->
-
 </div>
-
-
 
 <ng-template #tagsTemplate>
   <p class="side-bar-tittle">Tags history</p>
-  <button class="side-bar-button" *ngFor="let tag of tags">
+  <button (click)="searchByTagButton(tag)" class="side-bar-button" *ngFor="let tag of tags">
     {{ tag | titlecase}}
   </button>
 </ng-template>
