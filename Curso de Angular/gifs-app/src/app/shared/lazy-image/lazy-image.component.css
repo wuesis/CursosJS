@@ -1,0 +1,29 @@
+.cardImageContainer {
+  position: relative;
+}
+
+.cardImageContainer img {
+  border-radius: 30px;
+  width: 100%;
+  height: auto;
+  z-index: 0;
+}
+
+.cardImageContainer img:hover {
+  opacity: 50%;
+  transition: opacity 0.5s;
+}
+
+.cardImageContainer p {
+  position: absolute;
+  cursor: pointer;
+  z-index: 1;
+  right: 3%;
+  font-size: 30px;
+  margin: 0;
+}
+
+.cardImageContainer p:hover {
+  opacity: 100%;
+  color: red;
+}

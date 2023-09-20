@@ -1,13 +1,5 @@
-
-
-
-
 <div class="cardList">
-  <div *ngFor="let gif of gifs" class="card">
-    <div class="cardImageContainer">
-      <!-- <p>&#10006;</p> -->
-      <img [src]="gif.images.downsized_medium.url">
-    </div>
-    <p>{{gif.title}}</p>
-  </div>
+  <visualizer-card *ngFor="let gif of gifs" [gif]="gif">
+
+  </visualizer-card>
 </div>

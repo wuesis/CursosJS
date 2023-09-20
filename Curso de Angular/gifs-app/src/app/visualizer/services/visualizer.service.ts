@@ -15,6 +15,7 @@ export class VisualizerService {
 
   constructor(private http: HttpClient) {
     this._tagHistory = [];
+    this.loadLocalStorage();
   }
 
   public getTaghistory(): string[] {
@@ -24,13 +25,24 @@ export class VisualizerService {
   private organizeHistory(tag: string) {
     tag = tag.toLowerCase();
 
-    if ( this._tagHistory.includes( tag ) ) {
-      this._tagHistory = this._tagHistory.filter( (oldTag) => oldTag !== tag )
+    if (this._tagHistory.includes(tag)) {
+      this._tagHistory = this._tagHistory.filter((oldTag) => oldTag !== tag)
     }
 
-    this._tagHistory.unshift( tag );
-    this._tagHistory = this._tagHistory.splice(0,10);
+    this._tagHistory.unshift(tag);
+    this._tagHistory = this._tagHistory.splice(0, 10);
 
+  }
+
+  private saveLocalStorage(): void {
+    localStorage.setItem("history", JSON.stringify(this._tagHistory))
+  }
+
+  private loadLocalStorage(): void {
+    if(!localStorage.getItem('history') ) return;
+
+    this._tagHistory = JSON.parse(localStorage.getItem('history')!);
+    this.searchTag(this._tagHistory[0]);
   }
 
   public searchTag(tag: string): void {
@@ -38,7 +50,9 @@ export class VisualizerService {
     if (tag.length == 0)
       return;
 
-      this.organizeHistory(tag);
+    this.organizeHistory(tag);
+
+    this.saveLocalStorage();
 
     const params = new HttpParams()
       .set("api_key", this.GIPHY_API_KEY)

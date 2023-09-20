@@ -9,6 +9,7 @@ import { VisualizerModule } from './visualizer/visualizer.module';
 @NgModule({
   declarations: [
     AppComponent,
+
   ],
   imports: [
     HttpClientModule,

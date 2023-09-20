@@ -1,0 +1,12 @@
+<div class="cardImageContainer">
+  <img
+  src="{{url}}"
+  alt="{{alt}}"
+  (load)="onLoad()"
+  [ngStyle]="{ display: hasBeenLoaded ? '' : 'none' }"
+/>
+
+<img *ngIf="!hasBeenLoaded" src="../../../assets/loader.svg">
+
+
+</div>

@@ -1,0 +1,10 @@
+<!-- <p>&#10006;</p> -->
+<!-- <img [src]="gif.images.downsized_medium.url"> -->
+<div class="card">
+  <shared-lazy-image
+    [url]="gif?.images?.downsized?.url"
+    [alt]="gif?.title || 'No title' "
+    class="cardImageContainer">
+  </shared-lazy-image>
+  <p>{{gif?.title || 'No title :(' }}</p>
+</div>
