@@ -10,10 +10,10 @@ import { ContactComponent } from './shared/Pages/contact/contact.component';
 
 
 const routes: Routes = [
-  {
-    path: '',
-    component: HomeComponent
-  },
+  // {
+  //   path: '',
+  //   component: HomeComponent
+  // },
   {
     path: 'about',
     component: AboutComponent
@@ -23,8 +23,12 @@ const routes: Routes = [
     component: ContactComponent
   },
   {
+    path: 'contries',
+    loadChildren: () =>  import('./countries/countries.module').then((m) => m.CountriesModule)
+  },
+  {
     path: '**',
-    redirectTo: ''
+    redirectTo: 'contries'
   }
 ]
 

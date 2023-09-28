@@ -9,6 +9,11 @@
   font-size: 20px;
 }
 
+.list li:hover{
+  cursor: pointer;
+}
+
+
 .active{
   background-color: rgb(56, 105, 197);
   border-color: rgb(56, 105, 197);
