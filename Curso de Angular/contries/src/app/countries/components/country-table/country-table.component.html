@@ -1,0 +1,30 @@
+<div *ngIf="country.length === 0; else table">
+  There aren't informarion to display
+</div>
+
+<ng-template #table>
+
+  <table>
+    <thead>
+      <th>#</th>
+      <th>Flag</th>
+      <th>Name</th>
+      <th>Capital</th>
+      <th>Population</th>
+    </thead>
+    <tbody>
+      <tr *ngFor="let country of country; let i = index">
+        <td>{{i+1}}</td>
+        <td>{{country.flag}}</td>
+        <!-- <td>
+          <img [src]="country.flags.svg" [alt]="country.name.official">
+        </td> -->
+        <td> {{country.name.official}}</td>
+        <td> {{country.capital}}</td>
+        <td>{{country.population | number}}</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+

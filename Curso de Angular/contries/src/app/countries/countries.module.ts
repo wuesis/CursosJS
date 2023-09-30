@@ -5,6 +5,8 @@ import { ByCapitalPageComponent } from './pages/by-capital-page/by-capital-page.
 import { ByRegionPageComponent } from './pages/by-region-page/by-region-page.component';
 import { CountryPageComponent } from './pages/country-page/country-page.component';
 import { ContriesRoutingModule } from './contries-routing.module';
+import { SearchBarComponent } from './components/search-bar/search-bar.component';
+import { CountryTableComponent } from './components/country-table/country-table.component';
 
 
 
@@ -13,7 +15,9 @@ import { ContriesRoutingModule } from './contries-routing.module';
     ByCountryPageComponent,
     ByCapitalPageComponent,
     ByRegionPageComponent,
-    CountryPageComponent
+    CountryPageComponent,
+    SearchBarComponent,
+    CountryTableComponent
   ],
   imports: [
     CommonModule,

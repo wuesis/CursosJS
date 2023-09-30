@@ -1,1 +1,8 @@
-<p>by-capital-page works!</p>
+<h2>By Country</h2>
+<hr>
+
+<contries-search-bar  placeholder="Capital" (searhEmitter)="onSearchText($event)"></contries-search-bar>
+
+<hr>
+
+<countries-table [country]="country"></countries-table>
