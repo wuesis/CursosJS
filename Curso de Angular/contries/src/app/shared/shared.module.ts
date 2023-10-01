@@ -7,6 +7,7 @@ import { AboutComponent } from './Pages/about/about.component';
 import { ContactComponent } from './Pages/contact/contact.component';
 import { HomeComponent } from './Pages/home/home.component';
 import { SideBarComponent } from './components/side-bar/side-bar.component';
+import { SpinnerComponent } from './components/spinner/spinner.component';
 
 
 
@@ -15,7 +16,8 @@ import { SideBarComponent } from './components/side-bar/side-bar.component';
     AboutComponent,
     ContactComponent,
     HomeComponent,
-    SideBarComponent
+    SideBarComponent,
+    SpinnerComponent
   ],
   imports: [
     CommonModule,
