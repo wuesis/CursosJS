@@ -1,1 +1,8 @@
-<p>by-region-page works!</p>
+<h2>By region</h2>
+<hr>
+
+<contries-search-bar  placeholder="Region" (searhEmitter)="onSearchText($event)"></contries-search-bar>
+
+<hr>
+
+<countries-table [country]="country"></countries-table>
