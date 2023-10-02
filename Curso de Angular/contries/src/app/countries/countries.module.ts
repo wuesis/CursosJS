@@ -7,21 +7,23 @@ import { CountryPageComponent } from './pages/country-page/country-page.componen
 import { ContriesRoutingModule } from './contries-routing.module';
 import { SearchBarComponent } from './components/search-bar/search-bar.component';
 import { CountryTableComponent } from './components/country-table/country-table.component';
+import { SharedModule } from '../shared/shared.module';
 
 
 
 @NgModule({
   declarations: [
-    ByCountryPageComponent,
     ByCapitalPageComponent,
+    ByCountryPageComponent,
     ByRegionPageComponent,
     CountryPageComponent,
-    SearchBarComponent,
-    CountryTableComponent
+    CountryTableComponent,
+    SearchBarComponent
   ],
   imports: [
     CommonModule,
-    ContriesRoutingModule
+    ContriesRoutingModule,
+    SharedModule
   ]
 })
 export class CountriesModule { }

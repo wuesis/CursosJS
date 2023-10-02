@@ -28,7 +28,8 @@ import { SpinnerComponent } from './components/spinner/spinner.component';
     AboutComponent,
     ContactComponent,
     HomeComponent,
-    SideBarComponent
+    SideBarComponent,
+    SpinnerComponent
   ]
 })
 export class SharedModule { }

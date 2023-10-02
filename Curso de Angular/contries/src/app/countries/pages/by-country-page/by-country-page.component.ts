@@ -14,17 +14,20 @@ export class ByCountryPageComponent {
 
   }
 
+  public isLoading: boolean = false;
+
   public country: Country[] = [];
 
   public search: string = ''
 
   public onSearchText(search: string): void {
-    console.log(search);
+    this.isLoading = true;
     this.search = search;
     this.contrieservice.searchByContry(search)
-    .subscribe( contry =>
-      this.country = contry
-    );
+      .subscribe(contry => {
+        this.country = contry
+        this.isLoading = false
+      });
 
   }
 

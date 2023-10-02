@@ -1,8 +1,12 @@
 <h2>By country</h2>
 <hr>
 
-<contries-search-bar  placeholder="contry" (searhEmitter)="onSearchText($event)"></contries-search-bar>
+<contries-search-bar placeholder="contry" (debounceEmitter)="onSearchText($event)"></contries-search-bar>
 
 <hr>
 
+<sheare-spinner spinnerPlaceHolder="Loading" *ngIf="isLoading"></sheare-spinner>
+
 <countries-table [country]="country"></countries-table>
+
+
