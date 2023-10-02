@@ -1,12 +1,12 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnDestroy, OnInit, Output } from '@angular/core';
 
-import {Subject, debounceTime} from 'rxjs'
+import { Subject, Subscription, debounceTime } from 'rxjs'
 @Component({
   selector: 'contries-search-bar',
   templateUrl: './search-bar.component.html',
   styleUrls: ['./search-bar.component.css']
 })
-export class SearchBarComponent implements OnInit{
+export class SearchBarComponent implements OnInit, OnDestroy {
   @Input()
   public placeholder: string = ''
 
@@ -15,16 +15,22 @@ export class SearchBarComponent implements OnInit{
 
   public debouncer: Subject<string> = new Subject<string>();
 
-  ngOnInit(){
-    this.debouncer
-    .pipe(
-      debounceTime(500)
-    ).subscribe( (value: string) =>{
-      this.debounceEmitter.emit(value);
-    });
+  public debouncerSuscription?: Subscription;
+
+  ngOnInit() {
+    this.debouncerSuscription = this.debouncer
+      .pipe(
+        debounceTime(500)
+      ).subscribe((value: string) => {
+        this.debounceEmitter.emit(value);
+      });
   }
 
-  public onSearchBarEnterPress(emitValue: string){
+  ngOnDestroy(): void {
+    this.debouncerSuscription?.unsubscribe();
+  }
+
+  public onSearchBarEnterPress(emitValue: string) {
     this.debouncer.next(emitValue);
   }
 }
