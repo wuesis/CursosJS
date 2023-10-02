@@ -3,7 +3,8 @@ import { HttpClient } from '@angular/common/http'
 import { Observable, catchError, delay, map, of } from 'rxjs'
 
 
-import { Country, Region } from '../interfaces/country.interface';
+import { Country } from '../interfaces/country.interface';
+import { Region } from '../interfaces/region.type';
 
 @Injectable({
   providedIn: 'root'
