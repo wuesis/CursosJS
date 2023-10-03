@@ -10,6 +10,9 @@ export class SearchBarComponent implements OnInit, OnDestroy {
   @Input()
   public placeholder: string = ''
 
+  @Input()
+  public term?: string = ''
+
   @Output()
   public debounceEmitter: EventEmitter<string> = new EventEmitter();
 

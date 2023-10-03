@@ -1,5 +1,5 @@
 <div *ngIf="country.length === 0; else table">
-  There aren't informarion to display
+ {{noDataMessage}}
 </div>
 
 <ng-template #table>

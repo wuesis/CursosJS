@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 import { CountriesService } from '../../services/countries.service';
 import { Country } from '../../interfaces/country.interface';
@@ -8,22 +8,28 @@ import { Country } from '../../interfaces/country.interface';
   templateUrl: './by-country-page.component.html',
   styleUrls: ['./by-country-page.component.css']
 })
-export class ByCountryPageComponent {
+export class ByCountryPageComponent implements OnInit{
 
-  constructor(private contrieservice: CountriesService) {
-
-  }
 
   public isLoading: boolean = false;
 
   public country: Country[] = [];
 
-  public search: string = ''
+  public term: string = ''
 
-  public onSearchText(search: string): void {
+  constructor(private countriesServices: CountriesService) {
+
+  }
+
+  ngOnInit(): void {
+    this.country = this.countriesServices.cacheStore.byCountries.countries;
+    this.term = this.countriesServices.cacheStore.byCountries.term;
+  }
+
+  public onSearchText(term: string): void {
     this.isLoading = true;
-    this.search = search;
-    this.contrieservice.searchByContry(search)
+    this.term = term;
+    this.countriesServices.searchByContry(term)
       .subscribe(contry => {
         this.country = contry
         this.isLoading = false

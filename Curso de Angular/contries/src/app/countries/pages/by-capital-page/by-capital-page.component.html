@@ -1,8 +1,8 @@
 <h2>By capital</h2>
 <hr>
 
-<contries-search-bar  placeholder="Capital" (debounceEmitter)="onSearchText($event)"></contries-search-bar>
+<contries-search-bar  placeholder="Capital" [term]="term"  (debounceEmitter)="onSearchText($event)"></contries-search-bar>
 
 <hr>
 
-<countries-table [country]="country"></countries-table>
+<countries-table [country]="country" noDataMessage="There aren't informarion to display"></countries-table>

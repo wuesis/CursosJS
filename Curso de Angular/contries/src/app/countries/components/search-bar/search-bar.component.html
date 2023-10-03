@@ -1,6 +1,7 @@
 <input
   type="text"
   [placeholder]='"search a " + placeholder | titlecase'
+  [value]="term"
   (keyup)="onSearchBarEnterPress(txtInput.value)"
   #txtInput
 >

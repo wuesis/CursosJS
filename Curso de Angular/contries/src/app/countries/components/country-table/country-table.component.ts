@@ -11,4 +11,7 @@ export class CountryTableComponent {
   @Input()
   public country: Country[]  = [];
 
+  @Input()
+  public noDataMessage?: string;
+
 }

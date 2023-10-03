@@ -1,11 +1,13 @@
 <h2>By region</h2>
 <hr>
 
-<button *ngFor="let region of regions"
-[ngClass]="{'activeRegion': selectedRegion === region}"
-(click)="onSearchText(region)">
-  {{region}}</button>
+<button
+  *ngFor="let region of regions"
+  [ngClass]="{'activeRegion': selectedRegion === region}"
+  (click)="onSearchText(region)">
+  {{region}}
+</button>
 
 <hr>
 
-<countries-table [country]="country"></countries-table>
+<countries-table [country]="countries" noDataMessage="Select a region to desplay information"></countries-table>
